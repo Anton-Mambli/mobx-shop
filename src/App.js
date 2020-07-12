@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './sass/project.sass'
+import Cart from './components/Cart';
+import Catalog from './components/Catalog';
+import appStore from './stores/store'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="cart">
+                    <Cart store={appStore}/>
+                </div>
+                <div className="catalog">
+                    <Catalog store={appStore}/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
