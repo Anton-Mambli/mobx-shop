@@ -41,8 +41,8 @@ const Cart = props => {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Delivery type = {props.store.selectedDeliveryType} />
-            <Gift type = {props.store.selectedGiftType} />
+            <Delivery type = {props.store.selectedDeliveryType} onChange = {props.store.toggleDeliveryType} />
+            <Gift type = {props.store.selectedGiftType} onChange = {props.store.toggleGiftType} />
             <CartTotal totalCartSum={props.store.totalCartSum}/>
             <CartBtn onClear={props.store.clearCart} onSend={props.store.sendCart}/>
         </React.Fragment>

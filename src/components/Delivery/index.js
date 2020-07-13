@@ -8,15 +8,15 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import {observer} from 'mobx-react';
 
-const Delivery = ({type}) => {
+const Delivery = ({type, onChange}) => {
     return (
         <Typography component={Paper}>
             <div className="cart-delivery">
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Выберите тип доставки:</FormLabel>
                     <RadioGroup aria-label="delivery" name="delivery">
-                        <FormControlLabel value="Почтой"  control={<Radio checked={type === 'Почтой'} color="primary"/>} label="Почтой"/>
-                        <FormControlLabel value="До двери"   control={<Radio checked={type === 'До двери'} color="primary"/>} label="До двери"/>
+                        <FormControlLabel value="Почтой"  control={<Radio checked={type === 'Почтой'} color="primary" onClick = {() => onChange('Почтой')}/>} label="Почтой"/>
+                        <FormControlLabel value="До двери"   control={<Radio checked={type === 'До двери'} color="primary" onClick = {() => onChange('До двери')}/>} label="До двери"/>
                     </RadioGroup>
                 </FormControl>
             </div>

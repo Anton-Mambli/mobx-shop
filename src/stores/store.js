@@ -92,7 +92,14 @@ class Store {
     get giftType() {
         return this.selectedGiftType;
     }
-
+    @action
+    toggleDeliveryType = id => {
+        this.selectedDeliveryType = id;
+    }
+    @action
+    toggleGiftType = id => {
+        this.selectedGiftType = id;
+    }
     @action
     clearCart     = () => {
         this.cartList = [];
