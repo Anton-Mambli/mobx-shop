@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "customize-cra": "^1.0.0",
     "mobx": "^5.15.4",
+    "mobx-collection-store": "^2.0.0",
     "mobx-react": "^6.2.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",

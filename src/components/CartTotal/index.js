@@ -1,12 +1,13 @@
 import React from 'react';
+import appStore from '../../stores/store';
+import {observer} from 'mobx-react';
 
-
-const CartTotal = ({totalCartSum}) => {
+const CartTotal = () => {
     return (
         <div className="cart-total-sum">
-            <strong>Суммма</strong>: {totalCartSum}
+            <strong>Суммма</strong>: {appStore.totalCartSum}
         </div>
     );
 }
 
-export default CartTotal;
+export default observer(CartTotal);
