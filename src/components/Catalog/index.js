@@ -1,15 +1,21 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import GoodsCard from '../GoodsCard';
-import appStore from '../../stores/store';
+import goodStore from '../../stores/goodsStore';
 
 const Catalog = () => {
     return (
         <React.Fragment>
             <h2 className="title">Каталог</h2>
             <div className="catalog-list">
-                {appStore.goodsList.map((item, index) => (
-                    <GoodsCard {...item} key={index} increase={appStore.increaseCount} decrease={appStore.decreaseCount} addToCart={appStore.addToCart}/>
+                {goodStore.data.map((item, index) => (
+                    <GoodsCard
+                        {...item}
+                        key={index}
+                        increaseCount = {goodStore.increaseItemCount}
+                        decreaseCount = {goodStore.decreaseItemCount}
+                        addToCart = {goodStore.addToCart}
+                    />
                 ))}
             </div>
         </React.Fragment>

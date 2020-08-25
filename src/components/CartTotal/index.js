@@ -1,11 +1,11 @@
 import React from 'react';
-import appStore from '../../stores/store';
+import cartStore from '../../stores/cartStore';
 import {observer} from 'mobx-react';
 
 const CartTotal = () => {
     return (
         <div className="cart-total-sum">
-            <strong>Суммма</strong>: {appStore.totalCartSum}
+            <strong>Суммма</strong>: {cartStore.totalSym}
         </div>
     );
 }
