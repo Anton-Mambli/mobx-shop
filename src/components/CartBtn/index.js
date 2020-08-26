@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import cartStore from '../../stores/cartStore';
+import {observer} from 'mobx-react';
 
 const CartBtn = props => {
     return (
@@ -11,7 +12,7 @@ const CartBtn = props => {
                 </Button>
             </div>
             <div>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary" onClick={() => cartStore.sendCart(cartStore)} disabled = {cartStore.length === 0}>
                     Оформить заказ
                 </Button>
             </div>
@@ -19,4 +20,4 @@ const CartBtn = props => {
     );
 }
 
-export default CartBtn;
+export default observer(CartBtn);

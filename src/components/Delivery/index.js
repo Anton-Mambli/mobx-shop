@@ -7,7 +7,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import {observer} from 'mobx-react';
-import appStore from '../../stores/store';
+import cartStore from '../../stores/cartStore';
 const Delivery = () => {
     return (
         <Typography component={Paper}>
@@ -15,8 +15,18 @@ const Delivery = () => {
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Выберите тип доставки:</FormLabel>
                     <RadioGroup aria-label="delivery" name="delivery">
-                        <FormControlLabel value="Почтой"  control={<Radio checked={appStore.selectedDeliveryType === 'Почтой'} color="primary" onClick = {() => appStore.toggleDeliveryType('Почтой')}/>} label="Почтой"/>
-                        <FormControlLabel value="До двери"   control={<Radio checked={appStore.selectedDeliveryType === 'До двери'} color="primary" onClick = {() => appStore.toggleDeliveryType('До двери')}/>} label="До двери"/>
+                        <FormControlLabel
+                            value="Почтой"
+                            control={<Radio checked={cartStore.selectedDeliveryType === 'Почтой'}
+                            color="primary"
+                            onClick = {() => cartStore.changeDelivery('Почтой')}/>}
+                            label="Почтой"/>
+                        <FormControlLabel
+                            value="До двери"
+                            control={<Radio checked={cartStore.selectedDeliveryType === 'До двери'}
+                            color="primary"
+                            onClick = {() => cartStore.changeDelivery('До двери')}/>}
+                            label="До двери"/>
                     </RadioGroup>
                 </FormControl>
             </div>

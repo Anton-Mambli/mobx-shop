@@ -7,7 +7,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import {observer} from 'mobx-react';
-import appStore from '../../stores/store';
+import cartStore from '../../stores/cartStore';
 
 const Gift = () => {
     return (
@@ -16,8 +16,18 @@ const Gift = () => {
                 <FormControl component="fieldset">
                     <FormLabel component="legend">Выберите подарок:</FormLabel>
                     <RadioGroup aria-label="gift" name="gift">
-                        <FormControlLabel value="Салфетка для монитора" control={<Radio checked={appStore.selectedGiftType === 'Салфетка для монитора'} color="primary" onClick = {() => appStore.toggleGiftType('Салфетка для монитора')}/>} label="Салфетка для монитора"/>
-                        <FormControlLabel value="Флешка" control={<Radio checked={appStore.selectedGiftType === 'Флешка'} color="primary" onClick = {() => appStore.toggleGiftType('Флешка')}/>} label="Флешка"/>
+                        <FormControlLabel
+                            value="Салфетка для монитора"
+                            control={<Radio checked={cartStore.selectedGiftType === 'Салфетка для монитора'}
+                            color="primary"
+                            onClick = {() => cartStore.changeGift('Салфетка для монитора')}/>}
+                            label="Салфетка для монитора"/>
+                        <FormControlLabel
+                            value="Флешка"
+                            control={<Radio checked={cartStore.selectedGiftType === 'Флешка'}
+                            color="primary"
+                            onClick = {() => cartStore.changeGift('Флешка')}/>}
+                            label="Флешка"/>
                     </RadioGroup>
                 </FormControl>
             </div>

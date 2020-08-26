@@ -19,60 +19,69 @@ const goodStore = new ItemCollection([
         img:   ear01,
         name:  'Нашники 1',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     },
     {
         id:    1,
         img:   ear02,
         name:  'Нашники 2',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     }, {
         id:    2,
         img:   ear03,
         name:  'Нашники 3',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     },
     {
         id:    3,
         img:   mouse01,
         name:  'Мышака 1',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     },
     {
         id:    4,
         img:   mouse02,
         name:  'Мышака 2',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     }, {
         id:    5,
         img:   mouse03,
         name:  'Мышака 3',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     },
     {
         id:    6,
         img:   keyboard01,
         name:  'Клавиатура 1',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     },
     {
         id:    7,
         img:   keyboard02,
         name:  'Клавиатура 2',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     }, {
         id:    8,
         img:   keyboard03,
         name:  'Клавиатура 3',
         cost:  Math.floor(500 + Math.random() * (5000 + 1 - 500)),
-        count: 1
+        count: 1,
+        disabled: false
     }
 
 ])
