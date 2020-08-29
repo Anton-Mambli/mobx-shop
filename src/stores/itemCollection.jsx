@@ -56,31 +56,31 @@ export default class ItemCollection {
     }
 
     @action
-    addToCart = (id, store) => {
-        const target = this.data.findIndex(item => item.id === id);
-
-        if (store.data.find(item => item.id === id)) {
-            store.data[id].count += 1;
+    addToCart = (id, fromStore, toStore) => {
+        const target = fromStore.data.findIndex(item => item.id === id);
+        const position = {...fromStore.data[target]}
+        if (toStore.data.find(item => item.id === id)) {
+            toStore.data[id].count += 1;
         } else {
-            store.data.push(this.data[target]);
-            store.data[id].disabled = true;
+            toStore.data.push(position);
+            fromStore.data[id].disabled = true;
         }
     }
 
 
     @action
     increaseItemCount = (id, store) => {
-        const target = this.data.findIndex(item => item.id === id);
-        this.data[target].count += 1;
+        const target = store.data.findIndex(item => item.id === id);
+        store.data[target].count += 1;
     }
 
     @action
     decreaseItemCount = (id, store) => {
         const target = this.data.findIndex(item => item.id === id);
-        if (this.data[target].count > 0) {
-            this.data[target].count -= 1;
+        if (store.data[target].count > 0) {
+            store.data[target].count -= 1;
         } else {
-            this.data[target].count = 0;
+            store.data[target].count = 0;
         }
 
 

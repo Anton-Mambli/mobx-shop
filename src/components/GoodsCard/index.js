@@ -7,7 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import cartStore from '../../stores/cartStore';
-
+import goodStore from '../../stores/goodsStore';
 const GoodsCard = props => {
     let {id, img, name, count, cost, disabled} = props;
     return (
@@ -30,14 +30,14 @@ const GoodsCard = props => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary" onClick={() => props.decreaseCount(id, cartStore)}>
+                    <Button size="small" color="primary" onClick={() => props.decreaseCount(id, goodStore)}>
                         -
                     </Button>
                     {count}
-                    <Button size="small" color="primary" onClick={() => props.increaseCount(id, cartStore)}>
+                    <Button size="small" color="primary" onClick={() => props.increaseCount(id, goodStore)}>
                         +
                     </Button>
-                    <Button disabled={disabled} size="small" color="primary" onClick={() => props.addToCart(id, cartStore)}>
+                    <Button disabled={disabled} size="small" color="primary" onClick={() => props.addToCart(id, goodStore, cartStore)}>
                         {disabled ? 'Добавлено в корзину' : 'В корзину'}
                     </Button>
                 </CardActions>
