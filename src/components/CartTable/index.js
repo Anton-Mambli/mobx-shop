@@ -9,6 +9,7 @@ import SingleTableRow from '../TableRow';
 import Table from '@material-ui/core/Table';
 import {observer} from 'mobx-react';
 import cartStore from '../../stores/cartStore';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 const CartTable = () => {
     console.log(cartStore.data);
@@ -21,6 +22,7 @@ const CartTable = () => {
                         <TableCell>Наименование</TableCell>
                         <TableCell>Цена</TableCell>
                         <TableCell>Количество</TableCell>
+                        <TableCell><MoreHorizIcon/></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

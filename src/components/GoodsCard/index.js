@@ -30,11 +30,11 @@ const GoodsCard = props => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button size="small" color="primary" onClick={() => props.decreaseCount(id, goodStore)}>
+                    <Button disabled={disabled} size="small" color="primary" onClick={() => props.decreaseCount(id, goodStore)}>
                         -
                     </Button>
                     {count}
-                    <Button size="small" color="primary" onClick={() => props.increaseCount(id, goodStore)}>
+                    <Button disabled={disabled} size="small" color="primary" onClick={() => props.increaseCount(id, goodStore)}>
                         +
                     </Button>
                     <Button disabled={disabled} size="small" color="primary" onClick={() => props.addToCart(id, goodStore, cartStore)}>

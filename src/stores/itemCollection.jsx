@@ -29,7 +29,6 @@ export default class ItemCollection {
         return totalSum;
     }
 
-
     @action
     changeGift     = gift => {
         this.selectedGiftType = gift;
@@ -39,31 +38,33 @@ export default class ItemCollection {
         this.selectedDeliveryType = type;
     }
     @action
-    clearCart      = (store) => {
-        store.data = [];
+    clearCart      = (goodsStore, cartStore) => {
+        cartStore.data = [];
+        goodsStore.data.forEach(item => item.disabled = false)
     }
 
     @action
-    sendCart = (store) => {
+    sendCart = (goodsStore, cartStore) => {
         let orderedGoods = [];
-        this.data.forEach(item => orderedGoods.push({name: item.name, count: item.count}))
+        cartStore.data.forEach(item => orderedGoods.push({name: item.name, count: item.count}))
         let OrderedGoodsString = 'Были заказаны следующие товары:\n'
         orderedGoods.forEach(item => OrderedGoodsString += `${item.name} в количестве ${item.count} шт.\n`);
         OrderedGoodsString += `Выбранный тип доставки: ${this.selectedDeliveryType} \n`
         OrderedGoodsString += `Выбранный подарок: ${this.selectedGiftType} \n`
         alert(OrderedGoodsString);
-        this.clearCart(store);
+        this.clearCart(goodsStore, cartStore);
     }
 
     @action
-    addToCart = (id, fromStore, toStore) => {
-        const target = fromStore.data.findIndex(item => item.id === id);
-        const position = {...fromStore.data[target]}
-        if (toStore.data.find(item => item.id === id)) {
-            toStore.data[id].count += 1;
+    addToCart = (id, goodsStore, cartStore) => {
+        const target = goodsStore.data.findIndex(item => item.id === id);
+        const position = {...goodsStore.data[target]}
+        if (cartStore.data.find(item => item.id === id)) {
+            cartStore.data[id].count += 1;
         } else {
-            toStore.data.push(position);
-            fromStore.data[id].disabled = true;
+            cartStore.data.push(position);
+            goodsStore.data[id].count = 1;
+            goodsStore.data[id].disabled = true;
         }
     }
 
@@ -77,12 +78,18 @@ export default class ItemCollection {
     @action
     decreaseItemCount = (id, store) => {
         const target = this.data.findIndex(item => item.id === id);
-        if (store.data[target].count > 0) {
+        if (store.data[target].count > 1) {
             store.data[target].count -= 1;
         } else {
-            store.data[target].count = 0;
+            store.data[target].count = 1;
         }
 
 
+    }
+    @action
+    deleteFromList = (id, goodsStore, cartStore) => {
+        const filteredArray = cartStore.data.filter(item => item.id !== id)
+        cartStore.data = filteredArray;
+        goodsStore.data[id].disabled = false;
     }
 }
