@@ -1,7 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import GoodsCard from '../GoodsCard';
-import goodStore from '../../stores/goodsStore';
 import { goodsCollection } from '../../stores/store';
 
 const Catalog = () => {
