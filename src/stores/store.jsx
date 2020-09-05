@@ -48,7 +48,6 @@ class Cart {
         this.deliveryBonus = deliveryBonus;
         this.giftBonus = giftBonus;
     }
-
     @observable
     list = [];
     @observable

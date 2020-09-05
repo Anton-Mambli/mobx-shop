@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { cartCollection, goodsCollection } from '../../stores/store';
+import { goodsCollection } from '../../stores/store';
 
 const GoodsCard = props => {
     const { id, img, name, price, disabled } = props;
