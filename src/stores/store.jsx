@@ -96,7 +96,7 @@ class Cart {
 }
 
 //------------------------------------------------------------------------------
-const goodsList = goodsData.map(
+const goodsList = Array.from(goodsData).map(
     item => new Item(item.id, item.img, item.name, item.price, item.disabled)
 );
 export const deliveryBonus = new BonusType('Почтой');
