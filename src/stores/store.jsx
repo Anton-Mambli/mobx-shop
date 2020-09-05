@@ -67,7 +67,6 @@ class Cart {
     };
     getCartLength = () => this.list.length;
     getCartSum = () => {
-        console.log(1, this.totalSum);
         this.totalSum = this.list.reduce((acc, item) => {
             return acc + item.getPrice() * item.count;
         }, 0);
