@@ -1,0 +1,65 @@
+[
+  {
+    "id": 0,
+    "img": "ear-01.jpg",
+    "name": "Нашники 1",
+    "price": 1254,
+    "disabled": false
+  },
+  {
+    "id": 1,
+    "img": "ear-02.jpg",
+    "name": "Нашники 2",
+    "price": 2001,
+    "disabled": false
+  },
+  {
+    "id": 2,
+    "img": "ear-03.jpg",
+    "name": "Нашники 3",
+    "price": 3025,
+    "disabled": false
+  },
+  {
+    "id": 3,
+    "img": "mouse-01.jpg",
+    "name": "Мышака 1",
+    "price": 2135,
+    "disabled": false
+  },
+  {
+    "id": 4,
+    "img": "mouse-03.jpg",
+    "name": "Мышака 2",
+    "price": 2313,
+    "disabled": false
+  },
+  {
+    "id": 5,
+    "img": "mouse-03.jpg",
+    "name": "Мышака 3",
+    "price": 9523,
+    "disabled": false
+  },
+  {
+    "id": 6,
+    "img": "keyboard-01.jpg",
+    "name": "Клавиатура 1",
+    "price": 7521,
+    "disabled": false
+  },
+  {
+    "id": 7,
+    "img": "keyboard-02.jpg",
+    "name": "Клавиатура 2",
+    "price": 1000,
+    "disabled": false
+  },
+  {
+    "id": 8,
+    "img": "keyboard-03.jpg",
+    "name": "Клавиатура 3",
+    "price": 500,
+    "disabled": false
+  }
+]

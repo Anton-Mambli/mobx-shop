@@ -1,24 +1,20 @@
 import React from 'react';
-import {observer} from 'mobx-react';
+import { observer } from 'mobx-react';
 import GoodsCard from '../GoodsCard';
 import goodStore from '../../stores/goodsStore';
+import { goodsCollection } from '../../stores/store';
+
 const Catalog = () => {
     return (
         <React.Fragment>
             <h2 className="title">Каталог</h2>
             <div className="catalog-list">
-                {goodStore.data.map((item, index) => (
-                    <GoodsCard
-                        {...item}
-                        key={index}
-                        increaseCount = {goodStore.increaseItemCount}
-                        decreaseCount = {goodStore.decreaseItemCount}
-                        addToCart = {goodStore.addToCart}
-                    />
+                {goodsCollection.list.map((item, index) => (
+                    <GoodsCard {...item} key={index} />
                 ))}
             </div>
         </React.Fragment>
     );
-}
+};
 
 export default observer(Catalog);

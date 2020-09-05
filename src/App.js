@@ -1,13 +1,14 @@
 import React from 'react';
-import './sass/project.sass'
+import './sass/project.sass';
 import Cart from './components/Cart';
 import Catalog from './components/Catalog';
+import './stores/store';
 const App = () => {
     return (
         <div className="container">
             <div className="row">
                 <div className="cart">
-                    <Cart/>
+                    <Cart />
                 </div>
                 <div className="catalog">
                     <Catalog />
@@ -15,6 +16,6 @@ const App = () => {
             </div>
         </div>
     );
-}
+};
 
 export default App;

@@ -7,12 +7,11 @@ import TableCell from '@material-ui/core/TableCell';
 import TableBody from '@material-ui/core/TableBody';
 import SingleTableRow from '../TableRow';
 import Table from '@material-ui/core/Table';
-import {observer} from 'mobx-react';
-import cartStore from '../../stores/cartStore';
+import { observer } from 'mobx-react';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import { cartCollection } from '../../stores/store';
 
 const CartTable = () => {
-    console.log(cartStore.data);
     return (
         <TableContainer component={Paper}>
             <Table>
@@ -22,13 +21,15 @@ const CartTable = () => {
                         <TableCell>Наименование</TableCell>
                         <TableCell>Цена</TableCell>
                         <TableCell>Количество</TableCell>
-                        <TableCell><MoreHorizIcon/></TableCell>
+                        <TableCell>
+                            <MoreHorizIcon />
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {cartStore.data.map((item, index) => (
-                        <SingleTableRow {...item} key={index}/>
-                    ))}
+                    {cartCollection.list.map((item, index) => {
+                        return <SingleTableRow {...item} key={index} />;
+                    })}
                 </TableBody>
             </Table>
         </TableContainer>
